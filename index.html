@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1" />
+    <title>Mesto Russia</title>
+    <link rel="stylesheet"
+          href="pages/index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="images/logo.svg"
+          alt="Логотип Mesto Russia"
+        />
+      </header>
+      <main class="main">
+        <section class="profile">
+          <img
+            class="profile__avatar"
+            src="images/custo.jpg"
+            alt="Фотография Кусто"
+          />
+          <div class="profile__info">
+            <div class="profile__header">
+              <h1 class="profile__header-author">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button"
+                      type="button">
+                <img src="images/pencil.svg"
+                     alt="Карандаш" />
+              </button>
+            </div>
+            <p class="profile__description">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button"
+                  type="button">
+            <img
+              class="profile__add-button-image"
+              src="images/plus.svg"
+              alt="Плюс"
+            />
+          </button>
+        </section>
+        <ul class="places">
+          <li class="place">
+            <img
+              class="places__picture"
+              src="images/karachaevsk.jpg"
+              alt="Карачаевск"
+            />
+            <div class="place__information">
+              <h2 class="place__header">Карачаевск</h2>
+              <button class="place__heart-button"
+                      type="button"></button>
+            </div>
+          </li>
+          <li class="place">
+            <img
+              class="places__picture"
+              src="images/elbrus.jpg"
+              alt="Карачаевск"
+            />
+            <div class="place__information">
+              <h2 class="place__header">Гора Эльбрус</h2>
+              <button class="place__heart-button"
+                      type="button"></button>
+            </div>
+          </li>
+          <li class="place">
+            <img
+              class="places__picture"
+              src="images/dombay.jpg"
+              alt="Карачаевск"
+            />
+            <div class="place__information">
+              <h2 class="place__header">Домбай</h2>
+              <button class="place__heart-button"
+                      type="button"></button>
+            </div>
+          </li>
+          <li class="place">
+            <img
+              class="places__picture"
+              src="images/elbrus.jpg"
+              alt="Карачаевск"
+            />
+            <div class="place__information">
+              <h2 class="place__header">Гора Эльбрус</h2>
+              <button class="place__heart-button"
+                      type="button"></button>
+            </div>
+          </li>
+          <li class="place">
+            <img
+              class="places__picture"
+              src="images/dombay.jpg"
+              alt="Карачаевск"
+            />
+            <div class="place__information">
+              <h2 class="place__header">Домбай</h2>
+              <button class="place__heart-button"
+                      type="button"></button>
+            </div>
+          </li>
+          <li class="place">
+            <img
+              class="places__picture"
+              src="images/karachaevsk.jpg"
+              alt="Карачаевск"
+            />
+            <div class="place__information">
+              <h2 class="place__header">Карачаево-Черкессия</h2>
+              <button class="place__heart-button"
+                      type="button"></button>
+            </div>
+          </li>
+        </ul>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      </footer>
+      <section class="popup">
+        <div class="popup__container">
+          <button class="popup__close-button"
+                  type="button">
+            <img
+              class="popup__close-image"
+              src="images/close-button.svg"
+              alt="Крестик"
+            />
+          </button>
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form class="popup__input-content"
+                name="author-form"
+                method="dialog">
+            <input
+              type="text"
+              name="name"
+              class="popup__field popup__field_name_name"
+              value="Жак-Ив Кусто"
+              aria-label="Поле редактирования имени автора"
+            />
+            <input
+              type="text"
+              name="description"
+              class="popup__field popup__field_name_description"
+              value="Исследователь океана"
+              aria-label="Поле редактирования описания автора"
+            />
+            <button class="popup__submit-button"
+                    type="submit">
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
