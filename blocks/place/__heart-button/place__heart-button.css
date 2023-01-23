@@ -16,7 +16,3 @@
 .place__heart-button:hover {
   opacity: 0.5;
 }
-
-.place__heart-button:active {
-  background-image: url("../../../images/heart-active.svg");
-}

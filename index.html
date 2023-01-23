@@ -44,88 +44,38 @@
             />
           </button>
         </section>
-        <ul class="places">
-          <li class="place">
-            <img
-              class="places__picture"
-              src="images/karachaevsk.jpg"
-              alt="Карачаевск"
-            />
-            <div class="place__information">
-              <h2 class="place__header">Карачаевск</h2>
-              <button class="place__heart-button"
-                      type="button"></button>
-            </div>
-          </li>
-          <li class="place">
-            <img
-              class="places__picture"
-              src="images/elbrus.jpg"
-              alt="Карачаевск"
-            />
-            <div class="place__information">
-              <h2 class="place__header">Гора Эльбрус</h2>
-              <button class="place__heart-button"
-                      type="button"></button>
-            </div>
-          </li>
-          <li class="place">
-            <img
-              class="places__picture"
-              src="images/dombay.jpg"
-              alt="Карачаевск"
-            />
-            <div class="place__information">
-              <h2 class="place__header">Домбай</h2>
-              <button class="place__heart-button"
-                      type="button"></button>
-            </div>
-          </li>
-          <li class="place">
-            <img
-              class="places__picture"
-              src="images/elbrus.jpg"
-              alt="Карачаевск"
-            />
-            <div class="place__information">
-              <h2 class="place__header">Гора Эльбрус</h2>
-              <button class="place__heart-button"
-                      type="button"></button>
-            </div>
-          </li>
-          <li class="place">
-            <img
-              class="places__picture"
-              src="images/dombay.jpg"
-              alt="Карачаевск"
-            />
-            <div class="place__information">
-              <h2 class="place__header">Домбай</h2>
-              <button class="place__heart-button"
-                      type="button"></button>
-            </div>
-          </li>
-          <li class="place">
-            <img
-              class="places__picture"
-              src="images/karachaevsk.jpg"
-              alt="Карачаевск"
-            />
-            <div class="place__information">
-              <h2 class="place__header">Карачаево-Черкессия</h2>
-              <button class="place__heart-button"
-                      type="button"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="places"></ul>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
-      <section class="popup">
+      <section class="popup popup_show-image"
+               aria-label="Просмотр картинки">
+        <div class="popup__figure-container">
+          <button
+            class="popup__close-button popup__close-button_show-image"
+            type="button"
+          >
+            <img
+              class="popup__close-image"
+              src="images/close-button.svg"
+              alt="Крестик"
+            />
+          </button>
+          <figure class="popup__picture">
+            <img class="popup__image-container"
+                 src="#"
+                 alt="#" />
+            <figcaption class="popup__image-caption"></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="popup popup_edit_author">
         <div class="popup__container">
-          <button class="popup__close-button"
-                  type="button">
+          <button
+            class="popup__close-button popup__close-button_edit_author"
+            type="button"
+          >
             <img
               class="popup__close-image"
               src="images/close-button.svg"
@@ -133,23 +83,41 @@
             />
           </button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__input-content"
-                name="author-form"
-                method="dialog">
-            <input
-              type="text"
-              name="name"
-              class="popup__field popup__field_name_name"
-              value="Жак-Ив Кусто"
-              aria-label="Поле редактирования имени автора"
-            />
-            <input
-              type="text"
-              name="description"
-              class="popup__field popup__field_name_description"
-              value="Исследователь океана"
-              aria-label="Поле редактирования описания автора"
-            />
+          <form
+            class="popup__input-content popup__input-content_edit_author"
+            name="author-form"
+            method="dialog"
+          >
+            <label class="popup__input-holder">
+              <input
+                id="name-input"
+                type="text"
+                name="name"
+                class="popup__field popup__field_name_name"
+                value="Жак-Ив Кусто"
+                placeholder="Имя"
+                aria-label="Поле редактирования имени автора"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="popup__field-error name-input-error"></span>
+            </label>
+            <label class="popup__input-holder">
+              <input
+                id="description-input"
+                type="text"
+                name="description"
+                class="popup__field popup__field_name_description"
+                value="Исследователь океана"
+                placeholder="Профессия"
+                aria-label="Поле редактирования описания автора"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span class="popup__field-error description-input-error"></span>
+            </label>
             <button class="popup__submit-button"
                     type="submit">
               Сохранить
@@ -157,7 +125,72 @@
           </form>
         </div>
       </section>
+      <section class="popup popup_add_place">
+        <div class="popup__container">
+          <button
+            class="popup__close-button popup__close-button_add_place"
+            type="button"
+          >
+            <img
+              class="popup__close-image"
+              src="images/close-button.svg"
+              alt="Крестик"
+            />
+          </button>
+          <h3 class="popup__title">Новое место</h3>
+          <form
+            class="popup__input-content popup__input-content_add_place"
+            name="place-form"
+            method="dialog"
+          >
+            <label class="popup__input-holder">
+              <input
+                id="place-name-input"
+                type="text"
+                name="name-place"
+                class="popup__field popup__field_name_name-place"
+                placeholder="Название"
+                aria-label="Поле редактирования названия места"
+                minlength="2"
+                maxlength="30"
+                required
+              />
+              <span class="popup__field-error place-name-input-error"></span>
+            </label>
+            <label class="popup__input-holder">
+              <input
+                id="place-description-input"
+                type="url"
+                name="link"
+                class="popup__field popup__field_name_link"
+                placeholder="Ссылка на картинку"
+                aria-label="Поле редактирования ссылки на картинку"
+                required
+              />
+              <span
+                class="popup__field-error place-description-input-error"
+              ></span>
+            </label>
+            <button class="popup__submit-button"
+                    type="submit">Создать
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
+    <template id="card">
+      <li class="place">
+        <img class="place__picture" />
+        <button class="place__trash-button"
+                type="button"></button>
+        <div class="place__information">
+          <h2 class="place__header"></h2>
+          <button class="place__heart-button"
+                  type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
