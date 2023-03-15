@@ -2,18 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mesto Russia</title>
-    <link rel="stylesheet"
-          href="pages/index.css" />
   </head>
   <body>
     <div class="page">
       <header class="header">
         <img
           class="header__logo"
-          src="images/logo.svg"
+          src="<%=require('./images/logo.svg')%>"
           alt="Логотип Mesto Russia"
         />
       </header>
@@ -21,25 +18,22 @@
         <section class="profile">
           <img
             class="profile__avatar"
-            src="images/custo.jpg"
+            src="<%=require('./images/custo.jpg')%>"
             alt="Фотография Кусто"
           />
           <div class="profile__info">
             <div class="profile__header">
               <h1 class="profile__header-author">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button"
-                      type="button">
-                <img src="images/pencil.svg"
-                     alt="Карандаш" />
+              <button class="profile__edit-button" type="button">
+                <img src="<%=require('./images/pencil.svg')%>" alt="Карандаш" />
               </button>
             </div>
             <p class="profile__description">Исследователь океана</p>
           </div>
-          <button class="profile__add-button"
-                  type="button">
+          <button class="profile__add-button" type="button">
             <img
               class="profile__add-button-image"
-              src="images/plus.svg"
+              src="<%=require('./images/plus.svg')%>"
               alt="Плюс"
             />
           </button>
@@ -49,8 +43,7 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
-      <section class="popup popup_show-image"
-               aria-label="Просмотр картинки">
+      <section class="popup popup_type_image" aria-label="Просмотр картинки">
         <div class="popup__figure-container">
           <button
             class="popup__close-button popup__close-button_show-image"
@@ -58,19 +51,17 @@
           >
             <img
               class="popup__close-image"
-              src="images/close-button.svg"
+              src="<%=require('./images/close-button.svg')%>"
               alt="Крестик"
             />
           </button>
           <figure class="popup__picture">
-            <img class="popup__image-container"
-                 src="#"
-                 alt="#" />
+            <img class="popup__image-container" src="#" alt="#" />
             <figcaption class="popup__image-caption"></figcaption>
           </figure>
         </div>
       </section>
-      <section class="popup popup_edit_author">
+      <section class="popup popup_type_author">
         <div class="popup__container">
           <button
             class="popup__close-button popup__close-button_edit_author"
@@ -78,7 +69,7 @@
           >
             <img
               class="popup__close-image"
-              src="images/close-button.svg"
+              src="<%=require('./images/close-button.svg')%>"
               alt="Крестик"
             />
           </button>
@@ -118,14 +109,13 @@
               />
               <span class="popup__field-error description-input-error"></span>
             </label>
-            <button class="popup__submit-button"
-                    type="submit">
+            <button class="popup__submit-button" type="submit">
               Сохранить
             </button>
           </form>
         </div>
       </section>
-      <section class="popup popup_add_place">
+      <section class="popup popup_type_place">
         <div class="popup__container">
           <button
             class="popup__close-button popup__close-button_add_place"
@@ -133,7 +123,7 @@
           >
             <img
               class="popup__close-image"
-              src="images/close-button.svg"
+              src="<%=require('./images/close-button.svg')%>"
               alt="Крестик"
             />
           </button>
@@ -147,7 +137,7 @@
               <input
                 id="place-name-input"
                 type="text"
-                name="name-place"
+                name="place"
                 class="popup__field popup__field_name_name-place"
                 placeholder="Название"
                 aria-label="Поле редактирования названия места"
@@ -171,9 +161,7 @@
                 class="popup__field-error place-description-input-error"
               ></span>
             </label>
-            <button class="popup__submit-button"
-                    type="submit">Создать
-            </button>
+            <button class="popup__submit-button" type="submit">Создать</button>
           </form>
         </div>
       </section>
@@ -181,24 +169,12 @@
     <template id="card">
       <li class="place">
         <img class="place__picture" />
-        <button class="place__trash-button"
-                type="button"></button>
+        <button class="place__trash-button" type="button"></button>
         <div class="place__information">
           <h2 class="place__header"></h2>
-          <button class="place__heart-button"
-                  type="button"></button>
+          <button class="place__heart-button" type="button"></button>
         </div>
       </li>
     </template>
-    <script type="module"
-            src="./scripts/index.js"></script>
-    <script type="module"
-            src="./scripts/constants.js"></script>
-    <script type="module"
-            src="./scripts/utils.js"></script>
-    <script type="module"
-            src="./scripts/Card.js"></script>
-    <script type="module"
-            src="./scripts/FormValidator.js"></script>
   </body>
 </html>

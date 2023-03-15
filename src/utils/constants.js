@@ -32,3 +32,43 @@ export const formOptions = {
   inputErrorClass: "popup__field_invalid",
   errorClass: "popup__field-error_active",
 };
+
+export const popupOptions = {
+  shared: {
+    openedPopupClass: "popup_opened",
+    closeElementClass: "popup__close-image",
+  },
+  addPlace: {
+    popupSelector: ".popup_type_place",
+  },
+  editAuthor: {
+    popupSelector: ".popup_type_author",
+  },
+  showImagePopup: {
+    popupSelector: ".popup_type_image",
+    imageContainerSelector: ".popup__image-container",
+    imageCaptionSelector: ".popup__image-caption",
+  },
+};
+
+export const userOptions = {
+  nameSelector: ".profile__header-author",
+  descriptionSelector: ".profile__description",
+};
+
+export const cardOptions = {
+  activeHeartClass: "place__heart-button_active",
+  templateSelector: "#card",
+  mainSelector: ".place",
+  titleSelector: ".place__header",
+  imageSelector: ".place__picture",
+  trashButtonSelector: ".place__trash-button",
+  heartButtonSelector: ".place__heart-button",
+};
+
+export const generalOptions = {
+  formSelector: "form",
+  addPlaceButtonSelector: ".profile__add-button",
+  editAuthorButtonSelector: ".profile__edit-button",
+  cardsSectionSelector: ".places",
+};
