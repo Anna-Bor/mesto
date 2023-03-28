@@ -1,9 +1,4 @@
 export class FormValidator {
-  _options;
-  _element;
-  _inputList;
-  _buttonElement;
-
   constructor(options, element) {
     this._options = options;
     this._element = element;

@@ -6,13 +6,14 @@ export class PopupWithForm extends Popup {
     callback,
     validatorCallback,
     sharedPopupOptions,
-    formOptions
+    { formSelector, inputSelector, submitButtonSelector, loadingText }
   ) {
     super(selector, sharedPopupOptions);
-    this._form = this._element.querySelector("form");
-    this._inputs = Array.from(
-      this._element.querySelectorAll(formOptions.inputSelector)
-    );
+    this._form = this._element.querySelector(formSelector);
+    this._inputs = Array.from(this._form.querySelectorAll(inputSelector));
+    this._submitButton = this._form.querySelector(submitButtonSelector);
+    this._submitButtonText = this._submitButton.textContent;
+    this._loadingText = loadingText;
     this._callback = callback;
 
     validatorCallback();
@@ -33,15 +34,23 @@ export class PopupWithForm extends Popup {
 
   close() {
     super.close();
+    this.renderDefaultButtonText();
     this._form.reset();
   }
 
   setEventListeners() {
     this._form.addEventListener("submit", () => {
       this._callback(this._getInputValues());
-      this.close();
     });
     super.setEventListeners();
+  }
+
+  renderLoading() {
+    this._submitButton.textContent = this._loadingText;
+  }
+
+  renderDefaultButtonText() {
+    this._submitButton.textContent = this._submitButtonText;
   }
 
   _getInputValues() {

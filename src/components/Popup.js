@@ -1,8 +1,5 @@
 export class Popup {
-  constructor(
-    selector,
-    { openedPopupClass, closeElementClass }
-  ) {
+  constructor(selector, { openedPopupClass, closeElementClass }) {
     this._element = document.querySelector(selector);
     this._openedPopupClass = openedPopupClass;
     this._closeElementClass = closeElementClass;

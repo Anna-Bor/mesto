@@ -10,7 +10,7 @@
   cursor: pointer;
   transition: opacity 2s ease;
   padding: 0;
-  margin: 5px;
+  margin: 0;
 }
 
 .place__heart-button:hover {

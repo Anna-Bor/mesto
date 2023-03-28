@@ -16,19 +16,24 @@
       </header>
       <main class="main">
         <section class="profile">
-          <img
-            class="profile__avatar"
-            src="<%=require('./images/custo.jpg')%>"
-            alt="Фотография Кусто"
-          />
+          <div class="profile__avatar-container">
+            <img class="profile__avatar" src="#" alt="Аватар автора" />
+            <button class="profile__avatar-button" type="button">
+              <img
+                class="profile__image-button"
+                src="<%=require('./images/pencil.svg')%>"
+                alt="Карандаш"
+              />
+            </button>
+          </div>
           <div class="profile__info">
             <div class="profile__header">
-              <h1 class="profile__header-author">Жак-Ив Кусто</h1>
+              <h1 class="profile__header-author"></h1>
               <button class="profile__edit-button" type="button">
                 <img src="<%=require('./images/pencil.svg')%>" alt="Карандаш" />
               </button>
             </div>
-            <p class="profile__description">Исследователь океана</p>
+            <p class="profile__description"></p>
           </div>
           <button class="profile__add-button" type="button">
             <img
@@ -41,7 +46,7 @@
         <ul class="places"></ul>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
       </footer>
       <section class="popup popup_type_image" aria-label="Просмотр картинки">
         <div class="popup__figure-container">
@@ -165,6 +170,74 @@
           </form>
         </div>
       </section>
+      <section class="popup popup_type_confirm">
+        <div class="popup__container">
+          <button
+            class="popup__close-button popup__close-button_add_place"
+            type="button"
+          >
+            <img
+              class="popup__close-image"
+              src="<%=require('./images/close-button.svg')%>"
+              alt="Крестик"
+            />
+          </button>
+          <h3 class="popup__title popup__title_confirm">Вы уверены?</h3>
+          <form class="popup__input-content" name="place-form" method="dialog">
+            <label class="popup__input-holder">
+              <input
+                id="place-id-input"
+                name="id"
+                class="popup__field popup__field_invisible popup__field_name_id"
+                placeholder="Ссылка на картинку"
+                readonly
+                aria-readonly="true"
+                required
+              />
+              <span
+                class="popup__field-error place-description-input-error"
+              ></span>
+            </label>
+            <button class="popup__submit-button" type="submit">Да</button>
+          </form>
+        </div>
+      </section>
+      <section class="popup popup_type_avatar">
+        <div class="popup__container">
+          <button
+            class="popup__close-button popup__close-button_add_place"
+            type="button"
+          >
+            <img
+              class="popup__close-image"
+              src="<%=require('./images/close-button.svg')%>"
+              alt="Крестик"
+            />
+          </button>
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form
+            class="popup__input-content popup__input-content_change_avatar"
+            name="place-form"
+            method="dialog"
+          >
+            <label class="popup__input-holder">
+              <input
+                id="avatar-url-input"
+                type="url"
+                name="url"
+                class="popup__field popup__field_name_url"
+                placeholder="Ссылка на аватар"
+                aria-label="Поле редактирования аватара"
+                required
+              />
+              <span class="popup__field-error avatar-url-input-error"></span>
+            </label>
+            <button class="popup__submit-button" type="submit">
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
     <template id="card">
       <li class="place">
@@ -172,7 +245,10 @@
         <button class="place__trash-button" type="button"></button>
         <div class="place__information">
           <h2 class="place__header"></h2>
-          <button class="place__heart-button" type="button"></button>
+          <div class="place__heart-container">
+            <button class="place__heart-button" type="button"></button>
+            <p class="place__number"></p>
+          </div>
         </div>
       </li>
     </template>
