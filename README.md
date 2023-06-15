@@ -7,4 +7,4 @@ Mesto
 
 В данной работе используются такие технологии, как HTML, CSS, Java Script.
 
-Ссылка на проект GitHub: https://annguskova.github.io/mesto/
+Ссылка на проект GitHub: https://anna-bor.github.io/mesto/
